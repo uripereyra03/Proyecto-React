@@ -1,14 +1,13 @@
 import React from 'react';
-import UriApp from './components/UriApp';
-import ContenidoCalzado from './components/ContenidoCalzado';
-import CartWidget from './components/cartwidget';
+import UriApp from './components/NavBar';
+import ContenidoCalzado from './components/ItemListConteiner';
+
 
 function App() {
     return (
         <div>
             <UriApp />
             <ContenidoCalzado greeting="¡Bienvenido a Uri App! Aqui vas a encontrar indumentaria deportiva" />
-            <CartWidget/>
         </div>
     );
 }
