@@ -1,14 +1,11 @@
 import React from 'react';
 
-
-function CalzadoContent() {
-    // Supongamos que tienes una lista de productos de calzado
+function ContenidoCalzado({ greeting }) {
     const productosCalzado = [
         { id: 1, nombre: 'Zapatillas', precio: 19.99 },
         { id: 2, nombre: 'Botines de fútbol 5 ', precio: 29.99 },
-        { id: 3, nombre: 'Botines de futbol 11', precio: 39.99},
-        { id: 3, nombre: 'Botines de futbol 11, tapones combinados', precio: 50.99, },
-        // Agrega más productos de calzado aquí
+        { id: 3, nombre: 'Botines de futbol 11', precio: 39.99 },
+        { id: 4, nombre: 'Botines de futbol 11, tapones combinados', precio: 50.99 },
     ];
 
     return (
@@ -27,8 +24,11 @@ function CalzadoContent() {
                     </div>
                 ))}
             </div>
+            <p>{greeting}</p>
         </div>
     );
 }
 
-export default CalzadoContent;
+export default ContenidoCalzado;
+
+
