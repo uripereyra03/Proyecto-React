@@ -1,13 +1,14 @@
 import React from 'react';
 
-const CartWidget = () => {
+const CartWidget = ({ cantidadEnCarrito }) => {
     return (
         <div>
             <i className="fas fa-shopping-cart"></i> 
-            <span>1</span>
+            <span>{cantidadEnCarrito}</span>
         </div>
     );
 };
+
 
 export default CartWidget;
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import CartWidget from './cartwidget';
+import CartWidget from './cartwidget'; 
 
 function UriApp() {
     return (
@@ -15,9 +15,10 @@ function UriApp() {
                     </Nav>
                 </Navbar.Collapse>
             </Container>
-            <CartWidget/>
+            <CartWidget /> {/* Agrega tu componente de carrito aquí */}
         </Navbar>
     );
 }
 
 export default UriApp;
+
