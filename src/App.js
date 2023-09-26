@@ -1,23 +1,22 @@
 import React from 'react';
 import UriApp from './components/NavBar';
 import ContenidoCalzado from './components/ItemListConteiner';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // Importa Switch solo una vez
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ItemListContainer from './components/ItemListConteiner';
 import ItemDetailContainer from './components/itemdetailconteiner';
 
 function App() {
     return (
-        <Router>
+        <BrowserRouter>
             <UriApp />
-            <Switch>
-                <Route path="/" exact component={ItemListContainer} />
+            <Routes>
+                <Route path="/" exact element={<ItemListContainer />} />
                 <Route path="/category/:id" component={ItemListContainer} />
                 <Route path="/item/:id" component={ItemDetailContainer} />
-            </Switch>
+            </Routes>
             <ContenidoCalzado greeting="¡Bienvenido a Uri App! Aquí vas a encontrar indumentaria deportiva" />
-        </Router>
+        </BrowserRouter>
     );
 }
 
 export default App;
-

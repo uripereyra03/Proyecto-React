@@ -12,13 +12,12 @@ function UriApp() {
                     <Nav className="ml-auto">
                         <Nav.Link href="/categoria1">Calzado</Nav.Link>
                         <Nav.Link href="/categoria2">Ropa</Nav.Link>
+                        <CartWidget /> {/* Agrega tu componente de carrito aquí */}
                     </Nav>
                 </Navbar.Collapse>
             </Container>
-            <CartWidget /> {/* Agrega tu componente de carrito aquí */}
         </Navbar>
     );
 }
 
 export default UriApp;
-

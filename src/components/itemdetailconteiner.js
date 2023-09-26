@@ -5,8 +5,6 @@ const ItemDetailContainer = ({ match }) => {
     const productId = match.params.id; 
 
     useEffect(() => {
-        // Aquí puedes realizar una solicitud a tu API para obtener los detalles del producto
-        // Reemplaza la siguiente línea con tu código de solicitud
         fetch(`tu-api/productos/${productId}`)
             .then((response) => response.json())
             .then((data) => setProduct(data));

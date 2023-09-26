@@ -1,6 +1,8 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
+const [carrito, setCarrito] = useState([]);
+
 function DetalleProducto() {
     const { id } = useParams();
     const productos = [
@@ -21,6 +23,9 @@ function DetalleProducto() {
             <h2>Detalle del Producto</h2>
             <h3>{producto.nombre}</h3>
             <p>Precio: ${producto.precio.toFixed(2)}</p>
+            <img src={producto.imagen} alt={producto.nombre} />
+            <p>{producto.descripcion}</p>
+            <button onClick={() => setCarrito([...carrito, producto])}>Agregar al carrito</button>
         </div>
     );
 }
