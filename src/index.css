@@ -1,31 +1,63 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-.cart-widget {
+/* Estilos para el contenedor de la barra de navegación */
+.navbar {
+  background-color: #333; /* Color de fondo de la barra de navegación */
+  padding: 10px; /* Espaciado interno para los elementos dentro de la barra */
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  width: 50px;
-  height: 50px;
-  border: 1px solid black;
-  padding: 10px;
+}
+
+/* Estilos para los enlaces de la barra de navegación */
+.navbar-title,
+.navbar-title-inicio {
+  text-decoration: none; /* Elimina la subrayado de los enlaces */
+  color: #fff; /* Color del texto de los enlaces */
+  margin-right: 20px; /* Espaciado entre los enlaces */
+  font-size: 1.2rem; /* Tamaño del texto de los enlaces */
+}
+
+/* Estilos para el botón de carrito */
+.cart-widget {
+  position: relative;
+}
+
+.cart-widget a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .cart-widget i {
-  font-size: 20px;
+  font-size: 1.5rem;
 }
 
+/* Estilos para el contenedor del carrito */
+.cart-widget {
+  position: relative;
+  margin-right: 20px;
+}
+
+/* Estilos para el icono del carrito */
+.cart-widget i {
+  font-size: 2rem;
+  color: #fffcfc; /* Color del icono (puedes personalizarlo) */
+}
+
+/* Estilos para la cantidad en el carrito */
 .cart-widget span {
-  font-size: 16px;
+  position: absolute;
+  top: -8px; /* Ajusta la posición vertical según tus necesidades */
+  right: -8px; /* Ajusta la posición horizontal según tus necesidades */
+  background-color: #ffffff; /* Color de fondo (puedes personalizarlo) */
+  color: #fff; /* Color del texto (puedes personalizarlo) */
+  border-radius: 50%; /* Hace que el fondo sea circular */
+  width: 24px; /* Ancho del círculo (ajusta según tus necesidades) */
+  height: 24px; /* Altura del círculo (ajusta según tus necesidades) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem; /* Tamaño del texto dentro del círculo */
 }

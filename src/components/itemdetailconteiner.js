@@ -1,13 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+
 
 const ItemDetailContainer = ({ match }) => {
     const [product, setProduct] = useState(null);
     const productId = match.params.id; 
 
     useEffect(() => {
-        fetch(`tu-api/productos/${productId}`)
-            .then((response) => response.json())
-            .then((data) => setProduct(data));
+        
+        if (productId) {
+            fetch(`tu-api/productos/${productId}`)
+                .then((response) => response.json())
+                .then((data) => setProduct(data))
+                .catch((error) => {
+                    
+                    console.error(error);
+                    setProduct(null); 
+                });
+        } else {
+            
+            console.error("El productId no se ha proporcionado.");
+            setProduct(null); 
+        }
     }, [productId]);
 
     return (
@@ -19,10 +33,9 @@ const ItemDetailContainer = ({ match }) => {
                     <p>Descripción: {product.descripcion}</p>
                 </div>
             ) : (
-                <p>Cargando detalles del producto...</p>
+                <p>No se pudo cargar los detalles del producto.</p>
             )}
         </div>
     );
 };
-
 export default ItemDetailContainer;
