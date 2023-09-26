@@ -12,5 +12,4 @@ const CartWidget = ({ cantidadEnCarrito }) => {
     );
 };
 
-
 export default CartWidget;

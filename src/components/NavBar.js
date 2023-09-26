@@ -1,23 +1,17 @@
 import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
-import CartWidget from './cartwidget'; 
+import { Link } from 'react-router-dom';
+import CartWidget from './cartwidget';
 
-function UriApp() {
+const NavBar = () => {
     return (
-        <Navbar bg="light" expand="lg">
-            <Container>
-                <Navbar.Brand href="/">Uri App</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ml-auto">
-                        <Nav.Link href="/categoria1">Calzado</Nav.Link>
-                        <Nav.Link href="/categoria2">Ropa</Nav.Link>
-                        <CartWidget /> {/* Agrega tu componente de carrito aquí */}
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
+        <div className="navbar">
+            <Link to="/" className="navbar-title navbar-title-inicio">Inicio</Link>
+            <Link to="/productos" className="navbar-title">Productos</Link>
+            <CartWidget></CartWidget>
+        </div>
     );
-}
+};
 
-export default UriApp;
+export default NavBar;
+
+
