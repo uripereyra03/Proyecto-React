@@ -1,41 +1,40 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { getProductById } from './asyncMock'; 
+import ItemDetail from './itemdetail'; 
 
 
 
-const ItemDetailContainer = ({ match }) => {
+
+const ItemDetailContainer = () => {
+    const { itemId } = useParams();
     const [product, setProduct] = useState(null);
-    const productId = match.params.id; 
 
     useEffect(() => {
-        
-        if (productId) {
-            fetch(`tu-api/productos/${productId}`)
-                .then((response) => response.json())
-                .then((data) => setProduct(data))
-                .catch((error) => {
-                    
+        if (itemId) {
+            const fetchData = async () => {
+                try {
+                    const productData = await getProductById(itemId);
+                    setProduct(productData);
+                } catch (error) {
                     console.error(error);
-                    setProduct(null); 
-                });
+                    setProduct(null);
+                }
+            };
+
+            fetchData();
         } else {
-            
-            console.error("El productId no se ha proporcionado.");
-            setProduct(null); 
+            console.error("El itemId no se ha proporcionado.");
+            setProduct(null);
         }
-    }, [productId]);
+    }, [itemId]);
 
     return (
         <div>
-            {product ? (
-                <div>
-                    <h2>{product.nombre}</h2>
-                    <p>Precio: ${product.precio}</p>
-                    <p>Descripción: {product.descripcion}</p>
-                </div>
-            ) : (
-                <p>No se pudo cargar los detalles del producto.</p>
-            )}
+            <h2>Detalles del Producto</h2>
+            <ItemDetail product={product} /> {/* Pasa los detalles del producto como prop */}
         </div>
     );
 };
+
 export default ItemDetailContainer;
