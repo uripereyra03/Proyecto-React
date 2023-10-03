@@ -14,10 +14,10 @@ const ItemDetail = ({ product }) => {
                     <h2>{product.nombre}</h2>
                     <p>Precio: ${product.precio}</p>
                     <p>Descripción: {product.descripcion}</p>
-                    <ItemCount onAdd={onAdd} /> {}
+                    <ItemCount onAdd={onAdd} /> 
                 </div>
             ) : (
-                <p>No se pudo cargar los detalles del producto.</p>
+                <p>Error al cargar los detalles del producto:</p>
             )}
         </div>
     );

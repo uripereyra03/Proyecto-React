@@ -17,9 +17,9 @@ const ItemListContainer = () => {
     console.log (products);
     return (
         <div>
-            <h2>Calzado</h2>
+            <h2>Tienda UriApp</h2>
             <Itemlist products={products} />
-            <p>Esta es mi tienda en línea</p>
+            <p>Bienvenidos, esta es mi tienda en linea, te podremos ofrecer todo tipo de calzado para hombre, desde zapatillas, hasta botines fubtol 11, si quieres mas informacion puedes ir a la seccion de prodcutos donde encontraras los precios y demas, muchas gracias por confiar en nosotros.</p>
         </div>
     );
 };

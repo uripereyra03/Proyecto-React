@@ -32,7 +32,7 @@ const ItemDetailContainer = () => {
     return (
         <div>
             <h2>Detalles del Producto</h2>
-            <ItemDetail product={product} /> {/* Pasa los detalles del producto como prop */}
+            <ItemDetail product={product}></ItemDetail>
         </div>
     );
 };

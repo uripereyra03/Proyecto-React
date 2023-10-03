@@ -1,19 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-
-const [carrito, setCarrito] = useState([]);
-
-const agregarAlCarrito = (producto) => {
-    setCarrito([...carrito, producto]);
-};
 
 function DetalleProducto() {
     const { id } = useParams();
+    const [carrito, setCarrito] = useState([]);
     const productos = [
-        { id: '1', nombre: 'Zapatillas', precio: 19.98 },
-        { id: '2', nombre: 'Botines de fútbol 5', precio: 29.99 },
-        { id: '3', nombre: 'Botines de fútbol 11', precio: 39.99 },
-        { id: '4', nombre: 'Botines de fútbol 11, tapones combinados', precio: 50.99 },
+        { id: '1', nombre: 'Zapatillas', precio: 19.98, imagen: 'url_de_la_imagen', descripcion: 'Descripción de las zapatillas' },
+        { id: '2', nombre: 'Botines de fútbol 5', precio: 29.99, imagen: 'url_de_la_imagen', descripcion: 'Descripción de los botines de fútbol 5' },
+        { id: '3', nombre: 'Botines de fútbol 11', precio: 39.99, imagen: 'url_de_la_imagen', descripcion: 'Descripción de los botines de fútbol 11' },
+        { id: '4', nombre: 'Botines de fútbol 11, tapones combinados', precio: 50.99, imagen: 'url_de_la_imagen', descripcion: 'Descripción de los botines de fútbol 11, tapones combinados' },
     ];
 
     const producto = productos.find((p) => p.id === id);
@@ -22,6 +17,11 @@ function DetalleProducto() {
         return <p>Producto no encontrado</p>;
     }
 
+    const agregarAlCarrito = () => {
+        setCarrito([...carrito, producto]);
+        console.log(`Agregado al carrito: ${producto.nombre}`);
+    };
+
     return (
         <div>
             <h2>Detalle del Producto</h2>
@@ -29,13 +29,9 @@ function DetalleProducto() {
             <p>Precio: ${producto.precio.toFixed(2)}</p>
             <img src={producto.imagen} alt={producto.nombre} />
             <p>{producto.descripcion}</p>
-            <button
-                className="btn btn-primary"
-                onClick={() => agregarAlCarrito(producto)}
-            >
+            <button className="btn btn-primary" onClick={agregarAlCarrito}>
                 Agregar al Carrito
             </button>
-
         </div>
     );
 }
