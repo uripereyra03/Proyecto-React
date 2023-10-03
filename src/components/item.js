@@ -8,7 +8,7 @@ function Item({ producto }) {
                 <div className="card-body">
                     <h5 className="card-title">{producto.nombre}</h5>
                     <p className="card-text">${producto.precio.toFixed(2)}</p>
-                    <Link to={"/item/:itemId"} className="btn btn-primary">
+                    <Link to={'/item/' + producto.id} className="btn btn-primary">
                         Ver Detalles
                     </Link>
                 </div>

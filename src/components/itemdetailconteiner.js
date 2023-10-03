@@ -32,7 +32,7 @@ const ItemDetailContainer = () => {
     return (
         <div>
             <h2>Detalles del Producto</h2>
-            <ItemDetail product={product}></ItemDetail>
+            <ItemDetail product={product}>.</ItemDetail>
         </div>
     );
 };
