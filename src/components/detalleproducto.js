@@ -5,10 +5,10 @@ function DetalleProducto() {
     const { id } = useParams();
     const [carrito, setCarrito] = useState([]);
     const productos = [
-        { id: '1', nombre: 'Zapatillas', precio: 19.98, imagen: 'url_de_la_imagen', descripcion: 'Descripción de las zapatillas' },
-        { id: '2', nombre: 'Botines de fútbol 5', precio: 29.99, imagen: 'url_de_la_imagen', descripcion: 'Descripción de los botines de fútbol 5' },
-        { id: '3', nombre: 'Botines de fútbol 11', precio: 39.99, imagen: 'url_de_la_imagen', descripcion: 'Descripción de los botines de fútbol 11' },
-        { id: '4', nombre: 'Botines de fútbol 11, tapones combinados', precio: 50.99, imagen: 'url_de_la_imagen', descripcion: 'Descripción de los botines de fútbol 11, tapones combinados' },
+        { id: '1', nombre: 'Zapatillas', precio: 40.98, imagen: 'url_de_la_imagen', descripcion: 'Descripción de las zapatillas' },
+        { id: '2', nombre: 'Botines de futbol', precio: 60.99, imagen: 'url_de_la_imagen', descripcion: 'Descripción de los botines de fútbol 5' },
+        { id: '3', nombre: 'Remeras', precio: 39.99, imagen: 'url_de_la_imagen', descripcion: 'Descripción de los botines de fútbol 11' },
+        { id: '4', nombre: 'Shorts', precio: 29.99, imagen: 'url_de_la_imagen', descripcion: 'Descripción de los botines de fútbol 11, tapones combinados' },
     ];
 
     const producto = productos.find((p) => p.id === id);

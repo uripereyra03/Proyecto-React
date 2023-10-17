@@ -1,7 +1,7 @@
 import React from 'react';
-import ItemCount from './itemcount'; 
+import ItemCount from './itemcount';
 
-const ItemDetail = ({ product }) => {
+const ItemDetail = ({ product, stock, initial }) => {
 
     const onAdd = (quantity) => {
         console.log(`Agregado al carrito: ${quantity} unidades`);
@@ -14,10 +14,10 @@ const ItemDetail = ({ product }) => {
                     <h2>{product.nombre}</h2>
                     <p>Precio: ${product.precio}</p>
                     <p>Descripción: {product.descripcion}</p>
-                    <ItemCount onAdd={onAdd} /> 
+                    <ItemCount stock={stock} initial={initial} onAdd={onAdd} />
                 </div>
             ) : (
-                <p>Error al cargar los detalles del producto:</p>
+                <p>Error al cargar los detalles del producto.</p>
             )}
         </div>
     );

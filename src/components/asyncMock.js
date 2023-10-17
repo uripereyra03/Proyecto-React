@@ -2,10 +2,10 @@ export const getProducts = async () => {
 };
 
 export const productosCalzado = [
-    { id: 1, nombre: 'Zapatillas', precio: 20.99, categoria: 'calzado', descripcion: "Comodas, resistentes y esteticas." },
-    { id: 2, nombre: 'Botines de fútbol 5', precio: 29.99, categoria: 'calzado', descripcion: "Comodas, resistentes y esteticas." },
-    { id: 3, nombre: 'Botines de futbol 11', precio: 39.99, categoria: 'calzado', descripcion: "Comodas, resistentes y esteticas." },
-    { id: 4, nombre: 'Botines de futbol 11, tapones combinados', precio: 50.99, categoria: 'calzado', descripcion: "Comodas, resistentes y esteticas." },
+    { id: 1, nombre: 'Zapatillas', precio: 30.99, categoria: 'calzado', descripcion: "Comodas, resistentes y esteticas." },
+    { id: 2, nombre: 'Botines de futbol', precio: 49.99, categoria: 'calzado', descripcion: "Comodas, resistentes y esteticas." },
+    { id: 3, nombre: 'Remeras', precio: 39.99, categoria: 'Ropa', descripcion: "Buena calidad, comodas y de todos los equipos." },
+    { id: 4, nombre: 'Shorts', precio: 29.99, categoria: 'Ropa', descripcion: "Comodos, resistentes y de todos los equipos." },
 ];
 
 

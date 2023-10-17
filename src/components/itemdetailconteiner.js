@@ -4,12 +4,11 @@ import { getProductById } from './asyncMock';
 import ItemDetail from './itemdetail'; 
 
 
-
-
 const ItemDetailContainer = () => {
     const { itemId } = useParams();
     const [product, setProduct] = useState(null);
-
+    const [stockValue ] = useState(10); 
+    const [initialValue] = useState(1); 
     useEffect(() => {
         if (itemId) {
             const fetchData = async () => {
@@ -32,7 +31,7 @@ const ItemDetailContainer = () => {
     return (
         <div>
             <h2>Detalles del Producto</h2>
-            <ItemDetail product={product}>.</ItemDetail>
+            <ItemDetail product={product} stock={stockValue} initial={initialValue} />
         </div>
     );
 };
